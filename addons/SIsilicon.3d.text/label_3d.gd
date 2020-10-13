@@ -10,8 +10,10 @@ export(Font) var font setget set_font;
 export(int, "Left", "Right", "Center", "Fill") var align setget set_align
 
 export(Color) var color = Color(0.6, 0.6, 0.6) setget set_color
+export(Color) var emission_color = Color(1.0, 1.0, 1.0) setget set_emission_color
 export(float, 0, 1) var metallic = 0.0 setget set_metallic
 export(float, 0, 1) var roughness = 0.5 setget set_roughness
+export(float, 0, 16) var emission = 0.0 setget set_emission
 
 export(int) var max_steps = 256 setget set_max_steps
 export(float) var step_size = 1.0 setget set_step_size
@@ -46,8 +48,10 @@ func _ready():
 	set_extrude(extrude)
 	
 	set_color(color)
+	set_emission_color(emission_color)
 	set_metallic(metallic)
 	set_roughness(roughness)
+	set_emission(emission)
 	
 	set_max_steps(max_steps)
 	set_step_size(step_size)
@@ -128,6 +132,11 @@ func set_color(col):
 	if material:
 		material.set_shader_param("albedo", color)
 
+func set_emission_color(emission_col):
+	emission_color = emission_col
+	if material:
+		material.set_shader_param("emission_color", emission_color)
+
 func set_metallic(metal):
 	metallic = metal
 	if material:
@@ -137,6 +146,11 @@ func set_roughness(rough):
 	roughness = rough
 	if material:
 		material.set_shader_param("roughness", roughness)
+
+func set_emission(emis):
+	emission = emis
+	if material:
+		material.set_shader_param("emission", emission)
 
 func set_max_steps(max_s):
 	max_steps = max(max_s, 8)
