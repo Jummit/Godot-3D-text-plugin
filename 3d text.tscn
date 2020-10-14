@@ -37,9 +37,9 @@ It's multiline too."
 text_size = 1.761
 font = null
 align = 2
-color = Color( 0.603922, 0.603922, 0.603922, 1 )
+color = Color( 1, 1, 1, 1 )
 metallic = 0.0
-roughness = 0.5
+roughness = 1.0
 emission_color = Color( 1, 1, 1, 1 )
 emission_strength = 0.0
 extrude = 0.1

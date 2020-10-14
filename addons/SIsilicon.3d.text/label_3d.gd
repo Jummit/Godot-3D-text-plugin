@@ -6,9 +6,9 @@ var text_size := 1.0 setget set_text_size
 var font: Font setget set_font
 var align := 0 setget set_align
 
-var color := Color(0.6, 0.6, 0.6) setget set_color
+var color := Color(1.0, 1.0, 1.0) setget set_color
 var metallic := 0.0 setget set_metallic
-var roughness := 0.5 setget set_roughness
+var roughness := 1.0 setget set_roughness
 var emission_strength := 0.0 setget set_emission_strength
 var emission_color := Color(1.0, 1.0, 1.0) setget set_emission_color
 
